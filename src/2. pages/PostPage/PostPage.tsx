@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '../hooks/redux';
+import { useAppSelector } from '../../1. app/storeProvider/hooks/redux';
 import { useEffect, useState } from 'react';
-import { IPost } from '../models/IPost';
-import CustomButton from './CustomButton';
+import { IPost } from '../../5. entities/Post/model/models/IPost';
+import CustomButton from '../../6. shared/ui/CustomButton';
 
 function PostPage() {
   const { id } = useParams();

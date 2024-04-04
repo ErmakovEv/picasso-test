@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { postApi } from '../services/PostService';
+import { postApi } from '../api/PostService';
 import { useInView } from 'react-intersection-observer';
-import { useAppSelector, useAppDispatch } from '../hooks/redux';
-import { postsSlice } from '../store/reducers/postsSlice';
-import { scrollSlice } from '../store/reducers/scrollSlice';
-import PostItem from './PostItem';
+import { useAppSelector, useAppDispatch } from '../../../1. app/storeProvider/hooks/redux';
+import { postsSlice } from '../../../1. app/storeProvider/reducers/postsSlice';
+import { scrollSlice } from '../../../1. app/storeProvider/reducers/scrollSlice';
+import PostItem from '../../../5. entities/Post/ui/PostItem';
 
 const PostsList = () => {
   const { increment } = postsSlice.actions;

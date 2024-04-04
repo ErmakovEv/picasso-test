@@ -1,0 +1,15 @@
+:root {
+  --font-family-main: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-secondary: SBSansText, Verdana;
+  --font-size-l: 2vh;
+  --font-size-m: 1.5vh;
+
+  --navbar-height: 5vh;
+
+  --main-color: #ffffff;
+  --secondary-color: #0056b3;
+
+  --border-color: #4e4e4e;
+  --background-color: #f2f2f2;
+  --text-color: black;
+}

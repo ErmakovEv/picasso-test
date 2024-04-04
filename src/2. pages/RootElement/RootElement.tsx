@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom";
-import { Navbar } from "../../3. widgets/Navbar";
+import { Outlet } from 'react-router-dom';
+import { Navbar } from '../../3. widgets/Navbar';
 
 function RootElement() {
   return (

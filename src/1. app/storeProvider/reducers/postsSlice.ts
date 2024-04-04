@@ -1,16 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IPost } from '../../models/IPost';
+import { IPost } from '../../../5. entities/Post/model/models/IPost';
 
 interface PostsState {
   total: number;
   current: number;
-  posts: IPost[]
+  posts: IPost[];
 }
 
 const initialState: PostsState = {
   total: 0,
   current: 10,
-  posts: []
+  posts: [],
 };
 
 export const postsSlice = createSlice({
@@ -26,10 +26,10 @@ export const postsSlice = createSlice({
       }
     },
     addPosts: (state, action: PayloadAction<IPost[]>) => {
-      state.posts = action.payload
+      state.posts = action.payload;
     },
     getPost: (state, action: PayloadAction<number>) => {
-      state.posts.find(item => item.id === action.payload)
+      state.posts.find((item) => item.id === action.payload);
     },
   },
 });

@@ -1,10 +1,12 @@
+@import 'variables';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-main);
   line-height: 1.5;
   font-weight: 400;
-  font-size: 14px;
-  color: black;
-  background-color: #f2f2f2;
+  font-size: var(--font-size-m);
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 body {
@@ -15,23 +17,36 @@ body {
 
 .navbar {
   position: fixed;
-  background-color: #f2f2f2;
+  background-color: var(--background-color);
   width: 100%;
-  height: 5vh;
+  height: var(--navbar-height);
   border-bottom: 1px solid rgb(200, 200, 200);
   z-index: 5;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px;
 }
 
 .navbar-logo {
-  height: 5vh;
+  height: var(--navbar-height);
+}
+
+.navbar-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-counter span {
+  display: block;
+  color: var(--secondary-color);
 }
 
 .root-element {
   position: absolute;
   z-index: 2;
-  top: 5vh;
+  top: var(--navbar-height);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -47,7 +62,7 @@ body {
 }
 
 .post-item {
-  background-color: #ffffff;
+  background-color: var(--main-color);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   margin-left: 5px;
@@ -69,7 +84,7 @@ body {
 }
 
 .post-item__title {
-  color: #0056b3;
+  color: var(--secondary-color);
 }
 
 .post-item__body {
@@ -82,9 +97,9 @@ body {
 }
 
 .custom-button {
-  font-family: SBSansText, Verdana;
+  font-family: var(--font-family-secondary);
   line-height: 1.25vw;
-  border: 2px solid #4e4e4e;
+  border: 2px solid var(--border-color);
   width: 30%;
   text-align: center;
   margin: 5px;
@@ -93,9 +108,9 @@ body {
 }
 
 .custom-button:hover {
-  background-color: #0056b3; /* Изменение цвета фона при наведении */
-  color: #f2f2f2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавление тени при наведении */
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
@@ -104,7 +119,7 @@ body {
 }
 
 .post-page {
-  background-color: #ffffff;
+  background-color: var(--main-color);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   margin-left: 5px;
@@ -130,7 +145,7 @@ body {
 
 .post-page__content-header span {
   width: 100%;
-  color: #0056b3;
-  font-size: 16px;
+  color: var(--secondary-color);
+  font-size: var(--font-size-l);
   text-align: center;
 }

@@ -1,5 +1,5 @@
-import { IPost } from '../models/IPost';
-import CustomButton from './CustomButton';
+import { IPost } from '../model/models/IPost';
+import CustomButton from '../../../6. shared/ui/CustomButton';
 
 type PostItemProps = {
   post: IPost;
