@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { IPost } from '../models/IPost';
-import { totalSlice } from '../store/reducers/postsTotalSlice';
+import { postsSlice } from '../store/reducers/postsSlice';
 import { store } from '../main';
 
-const { init } = totalSlice.actions;
+const { init, addPosts } = postsSlice.actions;
 
 export const postApi = createApi({
   reducerPath: 'posts',
@@ -21,6 +21,7 @@ export const postApi = createApi({
         if (headers) {
           const customHeader = headers.get('X-Total-Count');
           store.dispatch(init(customHeader ? +customHeader : 0));
+          store.dispatch(addPosts(response))
         }
         return response;
       },

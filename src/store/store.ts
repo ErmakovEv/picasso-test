@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import postsTotalSlice from './reducers/postsTotalSlice';
+import postsTotalSlice from './reducers/postsSlice';
+import scrollSlice from './reducers/scrollSlice';
 import { postApi } from '../services/PostService';
 
 const rootReducer = combineReducers({
   postsTotalSlice,
+  scrollSlice,
   [postApi.reducerPath]: postApi.reducer,
 });
 

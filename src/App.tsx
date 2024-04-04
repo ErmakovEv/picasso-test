@@ -1,7 +1,7 @@
-import PostItem from './components/PostItem';
+import PostsList from "./components/PostsList";
 
 function App() {
-  return <PostItem />;
+  return <PostsList />;
 }
 
 export default App;
