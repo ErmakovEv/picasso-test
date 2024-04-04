@@ -14,7 +14,7 @@ export function Navbar() {
         </Link>
       </div>
       <div className="navbar-counter">
-        Загружено постов <span>{`${current}/${total}`} </span>
+        Загружено постов <span>{`${total ? current : 0}/${total}`} </span>
       </div>
       <div>
         <Link to={'https://github.com/ErmakovEv'}>

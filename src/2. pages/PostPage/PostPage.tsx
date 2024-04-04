@@ -21,7 +21,7 @@ function PostPage() {
     <div className="post-page">
       <div className="post-page__content">
         <div className="post-page__content-header">
-          <h3>{currentPost?.id}</h3>
+          <h3>{currentPost ? currentPost.id : 'Нет данных'}</h3>
           <span>{currentPost?.title}</span>
         </div>
         <div className="post-page__content-body">
