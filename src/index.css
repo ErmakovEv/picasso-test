@@ -1,0 +1,29 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+}
+
+.posts-block {
+  /* height: 110vh; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.post-item {
+  border: 1px solid red;
+  margin-top: 10px; /* Фиксированное расстояние между постами */
+  height: 10vh; /* Фиксированная высота каждого поста */
+}
