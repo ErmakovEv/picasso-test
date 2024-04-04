@@ -1,7 +1,8 @@
-import { Link, useParams } from "react-router-dom";
-import { useAppSelector } from "../hooks/redux";
-import { useEffect, useState } from "react";
-import { IPost } from "../models/IPost";
+import { useParams } from 'react-router-dom';
+import { useAppSelector } from '../hooks/redux';
+import { useEffect, useState } from 'react';
+import { IPost } from '../models/IPost';
+import CustomButton from './CustomButton';
 
 function PostPage() {
   const { id } = useParams();
@@ -17,11 +18,21 @@ function PostPage() {
   }, [id, posts]);
 
   return (
-    <div>
-      <h4 style={{ color: "black" }}>{currentPost?.id}</h4>;
-      <h4 style={{ color: "black" }}>{currentPost?.title}</h4>;
-      <p style={{ color: "black" }}>{currentPost?.body}</p>;
-      <Link to={"/"}>На главную</Link>
+    <div className="post-page">
+      <div className="post-page__content">
+        <div className="post-page__content-header">
+          <h3>{currentPost?.id}</h3>
+          <span>{currentPost?.title}</span>
+        </div>
+        <div className="post-page__content-body">
+          <p>{currentPost?.body}</p>
+        </div>
+      </div>
+      <div className="post-page__ux">
+        <CustomButton link={'/'}>
+          <div>Назад</div>
+        </CustomButton>
+      </div>
     </div>
   );
 }

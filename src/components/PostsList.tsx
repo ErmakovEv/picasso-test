@@ -1,11 +1,10 @@
-import { useEffect } from "react";
-import { postApi } from "../services/PostService";
-import { useInView } from "react-intersection-observer";
-import { useAppSelector, useAppDispatch } from "../hooks/redux";
-import { postsSlice } from "../store/reducers/postsSlice";
-import { scrollSlice } from "../store/reducers/scrollSlice";
-import { IPost } from "../models/IPost";
-import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import { postApi } from '../services/PostService';
+import { useInView } from 'react-intersection-observer';
+import { useAppSelector, useAppDispatch } from '../hooks/redux';
+import { postsSlice } from '../store/reducers/postsSlice';
+import { scrollSlice } from '../store/reducers/scrollSlice';
+import PostItem from './PostItem';
 
 const PostsList = () => {
   const { increment } = postsSlice.actions;
@@ -35,10 +34,7 @@ const PostsList = () => {
   return (
     <div className="posts-block">
       {data?.map((item) => (
-        <div
-          key={item.id}
-          ref={ref}
-          onClick={() => dispatch(addValue(window.scrollY))}>
+        <div key={item.id} ref={ref} onClick={() => dispatch(addValue(window.scrollY))}>
           <div>
             <PostItem post={item} />
           </div>
@@ -49,17 +45,3 @@ const PostsList = () => {
 };
 
 export default PostsList;
-
-type PostItemProps = {
-  post: IPost;
-};
-
-function PostItem({ post }: PostItemProps) {
-  return (
-    <Link to={`${post.id}`}>
-      <div className="post-item">
-        {post.id} {post.title}
-      </div>
-    </Link>
-  );
-}
