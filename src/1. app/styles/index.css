@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 :root {
   font-family: var(--font-family-main);
@@ -54,6 +54,8 @@ body {
 
 .page-wrapper {
   min-width: 360px;
+  display: flex;
+  justify-content: center;
 }
 
 .posts-block {
@@ -148,4 +150,9 @@ body {
   color: var(--secondary-color);
   font-size: var(--font-size-l);
   text-align: center;
+}
+
+.error {
+  width: 100%;
+  color: var(--text-color-err);
 }

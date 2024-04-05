@@ -7,7 +7,7 @@ const { init, addPosts } = postsSlice.actions;
 
 export const postApi = createApi({
   reducerPath: 'posts',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholfder.typicode.com/' }),
   endpoints: (build) => ({
     fetchPost: build.query<IPost[], number>({
       query: (num = 10) => ({
