@@ -7,7 +7,7 @@ export function Navbar() {
 
   return (
     <div className="navbar">
-      <div>Здесь может быть Ваша реклама</div>
+      <div></div>
       <div className="navbar-counter">
         Загружено постов <span>{`${total ? current : 0}/${total}`} </span>
       </div>
