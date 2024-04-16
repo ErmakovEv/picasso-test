@@ -1,10 +1,13 @@
-import { useEffect } from 'react';
-import { postApi } from '../api/PostService';
-import { useInView } from 'react-intersection-observer';
-import { useAppSelector, useAppDispatch } from '../../../1. app/storeProvider/hooks/redux';
-import { postsSlice } from '../../../1. app/storeProvider/reducers/postsSlice';
-import { scrollSlice } from '../../../1. app/storeProvider/reducers/scrollSlice';
-import PostItem from '../../../5. entities/Post/ui/PostItem';
+import { useEffect } from "react";
+import { postApi } from "../api/PostService";
+import { useInView } from "react-intersection-observer";
+import {
+  useAppSelector,
+  useAppDispatch,
+} from "../../../1. app/storeProvider/hooks/redux";
+import { postsSlice } from "../../../1. app/storeProvider/reducers/postsSlice";
+import { scrollSlice } from "../../../1. app/storeProvider/reducers/scrollSlice";
+import PostItem from "../../../5. entities/Post/ui/PostItem";
 
 const PostsList = () => {
   const { increment } = postsSlice.actions;
@@ -16,7 +19,7 @@ const PostsList = () => {
   });
 
   const { value } = useAppSelector((state) => state.scrollSlice);
-  const { data } = postApi.useFetchPostQuery(current);
+  const { data, error } = postApi.useFetchPostQuery(current);
 
   useEffect(() => {
     window.scrollTo({
@@ -31,10 +34,17 @@ const PostsList = () => {
     }
   }, [dispatch, inView, increment]);
 
-  return (
+  return error ? (
+    <div className="post-item">
+      <div className="error">Ошибка загрузки данных</div>
+    </div>
+  ) : (
     <div className="posts-block">
       {data?.map((item) => (
-        <div key={item.id} ref={ref} onClick={() => dispatch(addValue(window.scrollY))}>
+        <div
+          key={item.id}
+          ref={ref}
+          onClick={() => dispatch(addValue(window.scrollY))}>
           <div>
             <PostItem post={item} />
           </div>
