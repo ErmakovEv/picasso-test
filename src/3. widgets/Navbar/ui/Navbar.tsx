@@ -1,4 +1,3 @@
-import logo from '../../../assets/sprite.png';
 import logo1 from '../../../assets/git.png';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../../1. app/storeProvider/hooks/redux';
@@ -8,11 +7,7 @@ export function Navbar() {
 
   return (
     <div className="navbar">
-      <div>
-        <Link to={'https://picasso-diagnostic.ru/patients/'}>
-          <img src={logo} alt="logo-main" className="navbar-logo" />
-        </Link>
-      </div>
+      <div>Здесь может быть Ваша реклама</div>
       <div className="navbar-counter">
         Загружено постов <span>{`${total ? current : 0}/${total}`} </span>
       </div>
